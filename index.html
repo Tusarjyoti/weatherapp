@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aurora Weather</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">
+        <span class="logo">⛅</span>
+        <span class="name">Aurora Weather</span>
+      </div>
+
+      <form id="search-form" class="search-wrap" autocomplete="off">
+        <input id="city-input" type="text" placeholder="Search city (e.g., Mumbai, London)" aria-label="Search city" />
+        <button class="btn" type="submit" title="Search">Search</button>
+      </form>
+
+      <div class="toggles">
+        <label class="switch" title="Toggle °C / °F">
+          <input id="unit-toggle" type="checkbox"/>
+          <span class="slider"></span>
+          <span class="unit-label"><span id="unit-c">°C</span> | <span id="unit-f">°F</span></span>
+        </label>
+        <button id="geo-btn" class="btn ghost" title="Use my location">📍</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="current">
+      <div id="current-card" class="card current-card">
+        <!-- Populated by JS -->
+      </div>
+      <div class="grid stats">
+        <div id="stat-feels" class="card mini"></div>
+        <div id="stat-wind" class="card mini"></div>
+        <div id="stat-humidity" class="card mini"></div>
+        <div id="stat-sun" class="card mini"></div>
+      </div>
+    </section>
+
+    <section class="forecast">
+      <h2 class="section-title">5-Day Forecast</h2>
+      <div id="forecast-grid" class="grid forecast-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <section class="extras">
+      <h2 class="section-title">Today’s Hourly</h2>
+      <div id="hourly-scroll" class="scroll-row">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <div id="error" class="error hidden"></div>
+  </main>
+
+  <footer class="footer">
+    <p>Powered by OpenWeather • © <span id="year"></span> Aurora</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
